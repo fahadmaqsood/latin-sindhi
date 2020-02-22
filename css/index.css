@@ -89,11 +89,14 @@ h1 {
     background-color:#fff;
     color: #5a5a5a;
     font-size: 1.1rem;
-    font-family: 'Ubuntu', sans-serif;
 }
 .alphabets-chart tr:nth-child(odd){
     background-color:#f8f9fa;
     color: #222;
 
     font-family: Arial;
+}
+
+[lang="sd"] {
+    font-family: 'Ubuntu', sans-serif!important;
 }
