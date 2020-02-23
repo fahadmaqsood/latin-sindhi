@@ -1,13 +1,81 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <!-- Simple HttpErrorPages | MIT License | https://github.com/AndiDittrich/HttpErrorPages -->
-    <meta charset="utf-8" /><meta http-equiv="X-UA-Compatible" content="IE=edge" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta name="robots" content="noindex, nofollow">
-    <title>Latin Sindhi Keyboard is not available for Windows yet.</title>
-    <style type="text/css">/*! Simple HttpErrorPages | MIT X11 License | https://github.com/AndiDittrich/HttpErrorPages */body,html{margin:0;padding:0;width:100%;height:100%;background-color:#21232a}body{color:#fff;text-align:center;text-shadow:0 2px 4px rgba(0,0,0,.5);padding:0;min-height:100%;-webkit-box-shadow:inset 0 0 100px rgba(0,0,0,.8);box-shadow:inset 0 0 100px rgba(0,0,0,.8);display:table;font-family:"Open Sans",Arial,sans-serif}h1{font-family:inherit;font-weight:500;line-height:1.1;color:inherit;font-size:36px}h1 small{font-size:68%;font-weight:400;line-height:1;color:#777}a{text-decoration:none;color:#fff;font-size:inherit;border-bottom:dotted 1px #707070}.lead{color:silver;font-size:21px;line-height:1.4}.cover{display:table-cell;vertical-align:middle;padding:0 20px}footer{position:fixed;width:100%;height:40px;left:0;bottom:0;color:#a0a0a0;font-size:14px}</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>A new script for Sindhi Language!</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="/latin-sindhi/css/download.css" rel="stylesheet">
+    <link href="/latin-sindhi/fonts/ubuntu/ubuntu.css" rel="stylesheet">
 </head>
+
 <body>
-    <div class="cover"><h1>It is not available for Windows yet.</h1><p class="lead">But we will be launching it soon.</p></div>
+    <header class="banner">
+        <h1 class="title">Downloading Keyboard...</h1>
+        <h2 class="tagline">If your download doesn't start automatically then click <a>here.</a></h2>
+
+        <!--<a href="https://github.com/fahadmaqsood/latin-sindhi" class="download-btn">View on GitHub</a>-->
+    </header>
+
+    <main class="main-content">
+
+        <section>
+            <h1>How to install Latin Sindhi on windows?</h1>
+
+            <p>You can run setup.exe file inside the downloaded zip file to install Latin Sindhi. But make sure to restart your computer after installation has finished. Otherwise, it will not be installed properly.</p>
+        </section>
+
+        <section>
+            <h1>How to write Latin Sindhi on windows?</h1>
+
+            <p>You will not be able to type Q, X, and V characters because Latin Sindhi does not have these characters.</p>
+
+            <p>So, when you press Q, two horizontal dots (◌̈) will be placed above the previous character. This can be helpful in writing characters like ä, d̈, ë, g̈, j̈ and ẗ. While SHIFT+Q will add two horizontal dots (◌̤) below the character which can be helpful in writing d̤.</p>
+            
+            <p>The X key will add a caron (◌̌) over the previous character so that you can write alphabets with harder sounds, for ex: b̌, ç̌, ǧ, ǰ, ǩ, ň, p̌, ř and š. While SHIFT+X will add a caron (◌̬) below an alphabet so that you can write d̬.</p>
+
+            <p>The V key will place a breve (◌̆) over the previous character so that you can write t̆ and SHIFT+V will place an upside-down breve over the previous character so that you can write t̑.</p>
+        </section>
+
+        <section>
+            <h1>Can I download a .png file of the layout?</h1>
+            <p>
+                Sure, Here is the keyboard layout which you can download.
+            </p>
+
+            <img class="layout-img" src="/latin-sindhi/layout/layout.png" alt="Latin Sindhi Keyboard /">
+        </section>
+
+        <section>
+            <h1>Want to ask something else?</h1>
+            <p>Send me an email at Qazifahadmaqsood@gmail.com or contact me on <a href="https://www.quora.com/profile/Fahad-Maqsood-Qazi">Quora</a>.</p>
+        </section>
+
+        
+    <!--========================scripts=============================-->
+    <script>
+        var element = document.createElement('a');
+        element.setAttribute('href', 'https://github.com/fahadmaqsood/latin-sindhi-keyboard-windows/blob/master/download/Sindhi%20Latin%20(v.1.0).zip?raw=true');
+        element.setAttribute('download', 'Latin Sindhi Keyboard (v.1.0).zip');
+
+        element.style.display = 'none';
+        document.body.appendChild(element);
+
+        element.click();
+
+        document.body.removeChild(element);
+    </script>
     
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-158624413-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-158624413-1');
+    </script>
 </body>
+
 </html>
