@@ -26,7 +26,7 @@ h1 {
 
 .title {
     margin-top: 0;
-    margin-bottom: 0.1rem;
+    margin-bottom: 0.3rem;
     font-size: 3.25rem;
 }
 .tagline {
@@ -40,6 +40,24 @@ h1 {
     color: #fff!important;
     text-decoration: underline;
 }
+.download-btn {
+    display: inline-block;
+    margin-bottom: 1rem;
+    margin-right: 0.2rem;
+    color: rgba(255,255,255,0.7);
+    background-color: rgba(255,255,255,0.08);
+    border-color: rgba(255,255,255,0.2);
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 0.3rem;
+    transition: color 0.2s, background-color 0.2s, border-color 0.2s;
+
+    padding: 0.75rem 1rem;
+
+    
+    cursor: pointer;
+}
+
 /** content **/
 .main-content {
     max-width: 67rem;
