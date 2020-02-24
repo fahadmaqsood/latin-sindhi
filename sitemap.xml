@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>http://fahadmaqsood.github.io/latin-sindhi/</loc>
+        <priority>1.0</priority>
+        <changefreq>daily</changefreq>
+        <lastmod>2020-02-24</lastmod>
+    </url>
+    <url>
+        <loc>http://fahadmaqsood.github.io/latin-sindhi/download/windows.html</loc>
+        <priority>1.0</priority>
+        <changefreq>daily</changefreq>
+        <lastmod>2020-02-24</lastmod>
+    </url>
+    <url>
+        <loc>http://fahadmaqsood.github.io/latin-sindhi/download/android.html</loc>
+        <priority>1.0</priority>
+        <changefreq>daily</changefreq>
+        <lastmod>2020-02-24</lastmod>
+    </url>
+</urlset>
