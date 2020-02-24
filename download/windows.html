@@ -20,8 +20,10 @@
 
 <body>
     <header class="banner">
-        <h1 class="title">Downloading Keyboard...</h1>
-        <h2 class="tagline">If your download doesn't start automatically then click <a>here.</a></h2>
+        <h1 class="title" id="title">Download Keyboard for Windows</h1>
+
+        <a id="start-download" class="download-btn">Start Download</a>
+        <h2 class="tagline" id="tagline"></h2>
 
         <!--<a href="https://github.com/fahadmaqsood/latin-sindhi" class="download-btn">View on GitHub</a>-->
     </header>
@@ -63,16 +65,50 @@
         
     <!--========================scripts=============================-->
     <script>
-        var element = document.createElement('a');
-        element.setAttribute('href', 'https://github.com/fahadmaqsood/latin-sindhi-keyboard-windows/blob/master/download/Sindhi%20Latin%20(v.1.0).zip?raw=true');
-        element.setAttribute('download', 'Latin Sindhi Keyboard (v.1.0).zip');
 
-        element.style.display = 'none';
-        document.body.appendChild(element);
+        var count = 3;
+        const url = "https://github.com/fahadmaqsood/latin-sindhi-keyboard-windows/blob/master/download/Sindhi%20Latin%20(v.1.0).zip?raw=true";
 
-        element.click();
 
-        document.body.removeChild(element);
+        function countdown() {
+            title = document.getElementById("title");
+
+            if (count > -1) {
+                title.innerHTML = "Your download will begin in... " + count;
+
+                if(count == 1) {
+                    startDownload();
+                }
+
+                count--;
+                setTimeout(countdown, 1000);
+            }else{
+                title.style.display = "none";
+                document.getElementById("tagline").innerHTML = `Your download may have began. If not, then click <a href='${url}'>Here</a> to trigger download again.`;
+            }
+        }
+
+        const startDownload = function() {
+            var element = document.createElement('a');
+            element.setAttribute('href', url);
+            element.setAttribute('download', 'Latin Sindhi Keyboard (v.1.0).zip');
+
+            element.style.display = 'none';
+            document.body.appendChild(element);
+
+            element.click();
+
+            document.body.removeChild(element);
+        }
+
+        document.getElementById("start-download").addEventListener("click",function(e){
+            e.preventDefault();
+
+            countdown();
+
+            document.getElementById("start-download").style.display = "none";
+        }, false);
+        /**/
     </script>
     
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-158624413-1"></script>
