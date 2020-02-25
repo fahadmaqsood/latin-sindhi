@@ -1,7 +1,0 @@
-User-Agent: *
-Disallow: 
-Allow: /
-Allow: /download/windows.html
-Allow: /download/android.html
-Allow: /latin-sindhi/download/windows.html
-Allow: /latin-sindhi/download/android.html
