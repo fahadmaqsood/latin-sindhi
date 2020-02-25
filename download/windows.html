@@ -82,11 +82,12 @@
     <script>
 
         var count = 5;
+        var times_downloaded = 0;
+        const download_count_elem = document.getElementById("downloads-count");
         const url = "https://github.com/fahadmaqsood/latin-sindhi-keyboard-windows/blob/master/download/Sindhi%20Latin%20(v.1.0).zip?raw=true";
 
         const get_downloads = function()
         {
-            const element = document.getElementById("downloads-count");
 
             // Create a request variable and assign a new XMLHttpRequest object to it.
             var request = new XMLHttpRequest()
@@ -99,7 +100,8 @@
                 var data = JSON.parse(this.response)
 
                 if (request.status >= 200 && request.status < 400) {
-                    element.innerHTML = element.innerHTML.replace("Loading...", data.downloads);
+                    times_downloaded = data.downloads;
+                    download_count_elem.innerHTML = download_count_elem.innerHTML.replace("Loading...", data.downloads);
                 } else {
                     console.log('error')
                 }
@@ -118,6 +120,7 @@
                 title.innerHTML = "Your download will begin in... " + count;
 
                 if(count == 2) {
+                    download_count_elem.innerHTML = download_count_elem.replace(times_downloaded, times_downloaded+1);
                     startDownload();
                 }
 
