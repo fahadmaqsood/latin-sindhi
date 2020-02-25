@@ -92,7 +92,7 @@
             var request = new XMLHttpRequest()
 
             // Open a new connection, using the GET request on the URL endpoint
-            request.open('GET', '//codingcollections.com/system/latin-sindhi/addDownload.php', true)
+            request.open('GET', '//codingcollections.com/system/latin-sindhi/addDownload.php');
 
             request.onload = function() {
                 // Begin accessing JSON data here
@@ -106,7 +106,7 @@
             }
 
             // Send request
-            request.setRequestHeader("Content-type", "application/json; charset=utf-8");
+            request.withCredentials = true
             request.setRequestHeader("access-control-allow-origin", "*");
             request.send()
         }
