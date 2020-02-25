@@ -120,8 +120,9 @@
                 title.innerHTML = "Your download will begin in... " + count;
 
                 if(count == 2) {
-                    download_count_elem.innerHTML = download_count_elem.innerHTML.replace(times_downloaded, times_downloaded+1);
                     startDownload();
+                } else if (count == 0) {
+                    download_count_elem.innerHTML = download_count_elem.innerHTML.replace(times_downloaded, times_downloaded+1);
                 }
 
                 count--;
