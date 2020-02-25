@@ -145,6 +145,11 @@
         document.getElementById("start-download").addEventListener("click",function(e){
             e.preventDefault();
 
+            var request = new XMLHttpRequest()
+            request.open('GET', '//codingcollections.com/system/latin-sindhi/addDownload.php');
+            request.onload = function() { if (request.status >= 200 && request.status < 400) { console.log('recorded the download') } else { console.log('error') }}
+            request.send()
+
             countdown();
 
             document.getElementById("start-download").style.display = "none";
