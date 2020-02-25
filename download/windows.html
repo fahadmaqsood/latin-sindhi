@@ -123,6 +123,8 @@
                     startDownload();
                 } else if (count == 0) {
                     download_count_elem.innerHTML = download_count_elem.innerHTML.replace(times_downloaded, times_downloaded+" + 1 ="+times_downloaded+1);
+
+                    setTimeout(()=> download_count_elem.innerHTML = download_count_elem.innerHTML.replace(times_downloaded+" + 1 ="+times_downloaded+1, times_downloaded + 1), 1000);
                 }
 
                 count--;
