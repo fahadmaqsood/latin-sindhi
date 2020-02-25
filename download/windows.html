@@ -125,7 +125,7 @@
                     let new_download_count = parseInt(times_downloaded + 1);
                     download_count_elem.innerHTML = download_count_elem.innerHTML.replace(times_downloaded, times_downloaded+" + 1 ="+ new_download_count);
 
-                    setTimeout(()=> download_count_elem.innerHTML = download_count_elem.innerHTML.replace(times_downloaded+" + 1 ="+times_downloaded+1, new_download_count), 2000);
+                    setTimeout(()=> download_count_elem.innerHTML = download_count_elem.innerHTML.replace(times_downloaded+" + 1 ="+new_download_count, new_download_count), 2000);
                 }
 
                 count--;
