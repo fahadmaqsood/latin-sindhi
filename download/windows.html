@@ -99,7 +99,7 @@
                 var data = JSON.parse(this.response)
 
                 if (request.status >= 200 && request.status < 400) {
-                    console.log(data);
+                    element.innerHTML = element.innerHTML.replace("10", data.downloads);
                 } else {
                     console.log('error')
                 }
