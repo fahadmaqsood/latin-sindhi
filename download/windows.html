@@ -122,7 +122,7 @@
                 if(count == 2) {
                     startDownload();
                 } else if (count == 0) {
-                    download_count_elem.innerHTML = download_count_elem.innerHTML.replace(times_downloaded, times_downloaded+1);
+                    download_count_elem.innerHTML = download_count_elem.innerHTML.replace(times_downloaded, times_downloaded+" + 1 ="+times_downloaded+1);
                 }
 
                 count--;
