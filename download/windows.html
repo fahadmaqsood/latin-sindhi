@@ -84,7 +84,7 @@
         var count = 5;
         var times_downloaded = 0;
         const download_count_elem = document.getElementById("downloads-count");
-        const url = "https://github.com/fahadmaqsood/latin-sindhi-keyboard-windows/blob/master/download/Sindhi%20Latin%20(v.1.0).zip?raw=true";
+        const url = "https://github.com/fahadmaqsood/latin-sindhi-keyboard-windows/blob/master/download/Sindhi%20Latin%20(Latest).zip?raw=true";
 
         const get_downloads = function()
         {
@@ -139,7 +139,7 @@
         const startDownload = function() {
             var element = document.createElement('a');
             element.setAttribute('href', url);
-            element.setAttribute('download', 'Latin Sindhi Keyboard (v.1.0).zip');
+            element.setAttribute('download', 'Latin Sindhi Keyboard (Latest).zip');
 
             element.style.display = 'none';
             document.body.appendChild(element);
