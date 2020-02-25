@@ -38,7 +38,7 @@
         <h2 class="tagline" id="tagline"></h2>
 
 
-        <p id="downloads-count">Number of times downloaded: 10</p>
+        <p id="downloads-count">Number of times downloaded: Loading...</p>
 
         <!--<a href="https://github.com/fahadmaqsood/latin-sindhi" class="download-btn">View on GitHub</a>-->
     </header>
@@ -99,7 +99,7 @@
                 var data = JSON.parse(this.response)
 
                 if (request.status >= 200 && request.status < 400) {
-                    element.innerHTML = element.innerHTML.replace("10", data.downloads);
+                    element.innerHTML = element.innerHTML.replace("Loading...", data.downloads);
                 } else {
                     console.log('error')
                 }
