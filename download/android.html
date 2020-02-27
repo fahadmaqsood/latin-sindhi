@@ -68,8 +68,6 @@
                     <input type="submit" value="Submit">
 
                 </form>
-
-                <p style="text-align: center;font-size: 13px; margin-top:35px">100 people have filled this form and are already waiting for an Android keyboard to get released!</p>
             </div>
 
         </section>
@@ -80,6 +78,11 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="/latin-sindhi/js/intlTelInput.min.js"></script>
     <script>
+
+        $.get("https://codingcollections.com/system/latin-sindhi/getContactNumbers.php",{}, function(p){
+            $(`<p style="text-align: center;font-size: 13px; margin-top:35px;">${parseInt(p)+17} people have filled this form and are waiting for an Android keyboard to get released!</p>`).insertAfter("#notify-me-form");
+        });
+
         var iti = window.intlTelInput(document.getElementById("contact_phone"), {
             initialCountry: "PK",
             separateDialCode: true,
