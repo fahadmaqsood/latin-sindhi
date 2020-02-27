@@ -1,0 +1,6 @@
+User-Agent: *
+Disallow: 
+Disallow: /
+Allow: /index.html
+Allow: /download/windows.html
+Allow: /download/android.html
