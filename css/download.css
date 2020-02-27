@@ -140,3 +140,34 @@ h1 {
         padding: 1rem 0.8rem;
     }
 }
+
+/* for android.html */
+.main-content .notify div {
+    text-align: center;
+}
+.main-content .notify div form select#notify_option {
+    padding: 4px;
+    width: 85px;
+}
+.main-content .notify div form input#contact_email {
+    padding: 14px;
+    height: 10px;
+    width: 200px;
+    border: 1px solid #606c71;
+}
+
+.main-content .notify div form input#contact_phone {
+    height: 42px;
+    border: 1px solid #606c71;
+    width: 230px;
+
+    display: none;
+}
+
+.main-content .notify div form input[type="submit"] {
+    height: 41.5px;
+    border: none;
+    background-color: #158e63;
+    color: #fff;
+    margin-left: -5px;
+}
