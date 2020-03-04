@@ -38,9 +38,8 @@
         <p class="tagline" id="tagline"></p>
 
 
-        <p id="downloads-count">Number of times downloaded: Loading...</p>
+        <!--<p id="downloads-count">Number of times downloaded: Loading...</p>-->
 
-        <!--<a href="https://github.com/fahadmaqsood/latin-sindhi" class="download-btn">View on GitHub</a>-->
     </header>
 
     <main class="main-content">
@@ -87,32 +86,32 @@
         const download_count_elem = document.getElementById("downloads-count");
         const url = "https://github.com/fahadmaqsood/latin-sindhi-keyboard-windows/blob/master/download/Sindhi%20Latin%20(Latest).zip?raw=true";
 
-        const get_downloads = function()
-        {
+        // const get_downloads = function()
+        // {
 
-            // Create a request variable and assign a new XMLHttpRequest object to it.
-            var request = new XMLHttpRequest()
+        //     // Create a request variable and assign a new XMLHttpRequest object to it.
+        //     var request = new XMLHttpRequest()
 
-            // Open a new connection, using the GET request on the URL endpoint
-            request.open('GET', '//codingcollections.com/system/latin-sindhi/addDownload.php?getDownloads=true');
+        //     // Open a new connection, using the GET request on the URL endpoint
+        //     request.open('GET', '//codingcollections.com/system/latin-sindhi/addDownload.php?getDownloads=true');
 
-            request.onload = function() {
-                // Begin accessing JSON data here
-                var data = JSON.parse(this.response)
+        //     request.onload = function() {
+        //         // Begin accessing JSON data here
+        //         var data = JSON.parse(this.response)
 
-                if (request.status >= 200 && request.status < 400) {
-                    times_downloaded = parseInt(data.downloads);
-                    download_count_elem.innerHTML = download_count_elem.innerHTML.replace("Loading...", data.downloads);
-                } else {
-                    console.log('error')
-                }
-            }
+        //         if (request.status >= 200 && request.status < 400) {
+        //             times_downloaded = parseInt(data.downloads);
+        //             download_count_elem.innerHTML = download_count_elem.innerHTML.replace("Loading...", data.downloads);
+        //         } else {
+        //             console.log('error')
+        //         }
+        //     }
 
-            // Send request
-            request.send()
-        }
+        //     // Send request
+        //     request.send()
+        // }
         
-        get_downloads();
+        //get_downloads();
 
         function countdown() {
             title = document.getElementById("title");
