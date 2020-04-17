@@ -3,7 +3,6 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
@@ -11,13 +10,12 @@
     <title>Download Latin Sindhi keyboard for Android! A new way to write Sindhi on the internet.</title>
 
     <meta name="Description" content="Download Latin Sindhi keyboard for Android for free! Introducing Latin script for the Sindhi language to make it easier for people to write and understand Sindhi on the internet.">
-    <meta name="Keywords" content="latin sindhi for android, download latin sindhi for android, latin sindhi, latin script for sindhi, sindhi's new script, a new script for sindhi language, a new way to write the sindhi language, latin sindhi download, sindhi download, download sindhi keyboard, download latin sindhi keyboard, how to write sindhi using latin alphabets">
+    <meta name="Keywords" content="latin sindhi, latin script for sindhi, sindhi's new script, a new script for sindhi language, a new way to write the sindhi language, latin sindhi download, sindhi download, download sindhi keyboard, download latin sindhi keyboard, how to write sindhi using latin alphabets">
 
     <meta name="google-site-verification" content="kLWlpO3_jHO1FO2Kx3FDJsFBElpp79IkBeNnijw9lgg" />
 
     <!--============================ OG TAGS ============================-->
     <meta property="og:title" content="Download Latin Sindhi keyboard for Android! A new way to write Sindhi on the internet.">
-    <meta property="og:description" content="Download Latin Sindhi keyboard for Android for free! Introducing Latin script for the Sindhi language to make it easier for people to write and understand Sindhi on the internet.">
     <meta property="og:image" content="../favicon/android-chrome-512x512.png">
     <!--=================================================================-->
 
@@ -30,125 +28,108 @@
 
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
     <link href="/latin-sindhi/css/download.css" rel="stylesheet">
-
-    <link rel="stylesheet" href="/latin-sindhi/css/intlTelInput.min.css">
 </head>
 
 <body>
     <header class="banner">
         <h1 class="title" id="title">Download Keyboard for Android</h1>
 
-        <!--<a id="start-download" class="download-btn">Start Download</a>-->
-        <p class="tagline" id="tagline">It is not available for Android yet, but we will be launching it soon.</p>
+        <a id="start-download" class="download-btn">Start Download</a>
+        <p class="tagline" id="tagline"></p>
 
 
         <!--<p id="downloads-count">Number of times downloaded: Loading...</p>-->
 
-        <!--<a href="https://github.com/fahadmaqsood/latin-sindhi" class="download-btn">View on GitHub</a>-->
     </header>
 
     <main class="main-content">
 
-        <section class="notify">
-            <h1>Want to get notified when we release it?</h1>
+        <section>
+            <h1>What are some key features of this keyboard?</h1>
+            <p>
+                <ul>
+                    <li>Learning ability</li>
+                    <li>Emoji predictions</li>
+                    <li>Multiple themes</li>
+                    <li>Multiple Languages</li>
+                    <li>Gesture typing</li>
+                    <li>Fully customizable</li>
+                </ul>
+            </p>
+        </section>
 
-            <div>
-                <form id="notify-me-form">
-                    Notify me through: 
-                    <select id="notify_option" onchange="selectChanged(this.value)">
-                        <option value="email">Email</option>
-                        <option value="phone">Phone</option>
-                    </select>
+        <section>
+            <h1>Does this keyboard only focus on Latin Script of Sindhi?</h1>
 
-                    <br><br>
+            <p>No, it's rather a generic keyboard with multiple languages (3 languages right now and 15 other languages coming soon), multiple themes and 100s of settings to customize and make it look and behave the way you want.</p>
+        </section>
 
-                    <input id="contact_email" placeholder="Enter your email here..." type="email" />
-                    <input id="contact_phone" placeholder="Phone No. here..." type="tel" />
-                    <input type="submit" value="Submit">
-
-                </form>
-            </div>
-
+        <section>
+            <h1>Want to ask something else?</h1>
+            <p>Send me an email at Qazifahadmaqsood@gmail.com or contact me on <a href="https://www.quora.com/profile/Fahad-Maqsood-Qazi">Quora</a> or on <a href="https://www.twitter.com/imFahadMaqsood">Twitter</a>.</p>
         </section>
 
     </main>
         
     <!--========================scripts=============================-->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="/latin-sindhi/js/intlTelInput.min.js"></script>
     <script>
 
-        $.get("https://codingcollections.com/system/latin-sindhi/getContactNumbers.php",{}, function(p){
-            $(`<p style="text-align: center;font-size: 13px; margin-top:35px;">${parseInt(p)+17} people have filled this form and are waiting for an Android keyboard to get released!</p>`).insertAfter("#notify-me-form");
-        });
+        var count = 5;
+        var times_downloaded = 0;
+        const download_count_elem = document.getElementById("downloads-count");
+        const url = "apk/Likhat.apk";
 
-        var iti = window.intlTelInput(document.getElementById("contact_phone"), {
-            initialCountry: "PK",
-            separateDialCode: true,
-            utilsScript: "/latin-sindhi/js/utils.js"
-        });
+        function countdown() {
+            title = document.getElementById("title");
 
-        $(".iti").hide();
+            if (count > -1) {
+                title.innerHTML = "Your download will begin in... " + count;
 
-        $('#notify-me-form').on('submit', function(e){
+                if(count == 2) {
+                    startDownload();
+                } else if (count == 0) {
+                    //let new_download_count = parseInt(times_downloaded + 1);
+                    //download_count_elem.innerHTML = download_count_elem.innerHTML.replace(times_downloaded, times_downloaded+" + 1 ="+ new_download_count);
+
+                    //setTimeout(()=> download_count_elem.innerHTML = download_count_elem.innerHTML.replace(times_downloaded+" + 1 ="+new_download_count, new_download_count), 2000);
+                }
+
+                count--;
+                setTimeout(countdown, 1000);
+            }else{
+                title.style.display = "none";
+                document.getElementById("tagline").innerHTML = `Your download may have began. If not, then click <a href='${url}'>Here</a> to trigger the download again.`;
+            }
+        }
+
+        const startDownload = function() {
+            var element = document.createElement('a');
+            element.setAttribute('href', url);
+            element.setAttribute('download', 'Likhat.apk');
+
+            element.style.display = 'none';
+            document.body.appendChild(element);
+
+            element.click();
+
+            document.body.removeChild(element);
+        }
+
+        document.getElementById("start-download").addEventListener("click",function(e){
             e.preventDefault();
 
-            let method = $("#notify_option").children("option:selected").val();
-            let source = '';
-            let source_elem;
-            
-            if(method == 'phone') {
-                source_elem = $("#contact_phone");
-                source = iti.getNumber();
-            } else {
-                source_elem = $("#contact_email");
-                source = source_elem.val();
-            }
+            var request = new XMLHttpRequest()
+            request.open('GET', '//codingcollections.com/system/latin-sindhi/addDownload.php');
+            request.onload = function() { if (request.status >= 200 && request.status < 400) { console.log('recorded the download') } else { console.log('error') }}
+            request.send()
 
-            if(source == '') {
-                source_elem.focus();
+            countdown();
 
-                return;
-            }
-
-            $('#notify-me-form').find("input[type='submit']").val('Submitting...');
-
-            $.post("https://codingcollections.com/system/latin-sindhi/addContact.php", {
-                notify_method: method,
-                notify_source: source,
-            }, function(p){
-                if (p == 1) {
-                    iti.destroy();
-                    $("#notify-me-form").hide();
-                    $(`<p style="color: #159957">Your ${(method == 'phone') ? 'Phone No.' : 'email'} was submitted. You'll be notified when we release it!</p>`).insertAfter("#notify-me-form");
-                }
-            });
-            
-        });
-
-        const selectChanged = function(value) {
-
-            let input = document.getElementById("contact_email");
-
-            if (value == 'phone') {
-
-                input.style.display = "none";
-                document.getElementById("contact_phone").style.display = "inline-block";
-                document.querySelectorAll(".iti").forEach(element => {
-                    element.style.display = "inline-block";
-                });
-                return;
-            }
-
-            input.style.display = "inline-block";
-            document.getElementById("contact_phone").style.display = "none";
-            document.querySelectorAll(".iti").forEach(element => {
-                element.style.display = "none";
-            });
-            
-        }
+            document.getElementById("start-download").style.display = "none";
+        }, false);
+        /**/
     </script>
-
+    
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-158624413-1"></script>
     <script>
         window.dataLayer = window.dataLayer || [];

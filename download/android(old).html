@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+
+    <title>Download Latin Sindhi keyboard for Android! A new way to write Sindhi on the internet.</title>
+
+    <meta name="Description" content="Download Latin Sindhi keyboard for Android for free! Introducing Latin script for the Sindhi language to make it easier for people to write and understand Sindhi on the internet.">
+    <meta name="Keywords" content="latin sindhi for android, download latin sindhi for android, latin sindhi, latin script for sindhi, sindhi's new script, a new script for sindhi language, a new way to write the sindhi language, latin sindhi download, sindhi download, download sindhi keyboard, download latin sindhi keyboard, how to write sindhi using latin alphabets">
+
+    <meta name="google-site-verification" content="kLWlpO3_jHO1FO2Kx3FDJsFBElpp79IkBeNnijw9lgg" />
+
+    <!--============================ OG TAGS ============================-->
+    <meta property="og:title" content="Download Latin Sindhi keyboard for Android! A new way to write Sindhi on the internet.">
+    <meta property="og:description" content="Download Latin Sindhi keyboard for Android for free! Introducing Latin script for the Sindhi language to make it easier for people to write and understand Sindhi on the internet.">
+    <meta property="og:image" content="../favicon/android-chrome-512x512.png">
+    <!--=================================================================-->
+
+    <!--============================FAVICONS=============================-->
+    <link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon/favicon-16x16.png">
+    <link rel="manifest" href="../favicon/site.webmanifest">
+    <!--=================================================================-->
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="/latin-sindhi/css/download.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="/latin-sindhi/css/intlTelInput.min.css">
+</head>
+
+<body>
+    <header class="banner">
+        <h1 class="title" id="title">Download Keyboard for Android</h1>
+
+        <!--<a id="start-download" class="download-btn">Start Download</a>-->
+        <p class="tagline" id="tagline">It is not available for Android yet, but we will be launching it soon.</p>
+
+
+        <!--<p id="downloads-count">Number of times downloaded: Loading...</p>-->
+
+        <!--<a href="https://github.com/fahadmaqsood/latin-sindhi" class="download-btn">View on GitHub</a>-->
+    </header>
+
+    <main class="main-content">
+
+        <section class="notify">
+            <h1>Want to get notified when we release it?</h1>
+
+            <div>
+                <form id="notify-me-form">
+                    Notify me through: 
+                    <select id="notify_option" onchange="selectChanged(this.value)">
+                        <option value="email">Email</option>
+                        <option value="phone">Phone</option>
+                    </select>
+
+                    <br><br>
+
+                    <input id="contact_email" placeholder="Enter your email here..." type="email" />
+                    <input id="contact_phone" placeholder="Phone No. here..." type="tel" />
+                    <input type="submit" value="Submit">
+
+                </form>
+            </div>
+
+        </section>
+
+    </main>
+        
+    <!--========================scripts=============================-->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="/latin-sindhi/js/intlTelInput.min.js"></script>
+    <script>
+
+        $.get("https://codingcollections.com/system/latin-sindhi/getContactNumbers.php",{}, function(p){
+            $(`<p style="text-align: center;font-size: 13px; margin-top:35px;">${parseInt(p)+17} people have filled this form and are waiting for an Android keyboard to get released!</p>`).insertAfter("#notify-me-form");
+        });
+
+        var iti = window.intlTelInput(document.getElementById("contact_phone"), {
+            initialCountry: "PK",
+            separateDialCode: true,
+            utilsScript: "/latin-sindhi/js/utils.js"
+        });
+
+        $(".iti").hide();
+
+        $('#notify-me-form').on('submit', function(e){
+            e.preventDefault();
+
+            let method = $("#notify_option").children("option:selected").val();
+            let source = '';
+            let source_elem;
+            
+            if(method == 'phone') {
+                source_elem = $("#contact_phone");
+                source = iti.getNumber();
+            } else {
+                source_elem = $("#contact_email");
+                source = source_elem.val();
+            }
+
+            if(source == '') {
+                source_elem.focus();
+
+                return;
+            }
+
+            $('#notify-me-form').find("input[type='submit']").val('Submitting...');
+
+            $.post("https://codingcollections.com/system/latin-sindhi/addContact.php", {
+                notify_method: method,
+                notify_source: source,
+            }, function(p){
+                if (p == 1) {
+                    iti.destroy();
+                    $("#notify-me-form").hide();
+                    $(`<p style="color: #159957">Your ${(method == 'phone') ? 'Phone No.' : 'email'} was submitted. You'll be notified when we release it!</p>`).insertAfter("#notify-me-form");
+                }
+            });
+            
+        });
+
+        const selectChanged = function(value) {
+
+            let input = document.getElementById("contact_email");
+
+            if (value == 'phone') {
+
+                input.style.display = "none";
+                document.getElementById("contact_phone").style.display = "inline-block";
+                document.querySelectorAll(".iti").forEach(element => {
+                    element.style.display = "inline-block";
+                });
+                return;
+            }
+
+            input.style.display = "inline-block";
+            document.getElementById("contact_phone").style.display = "none";
+            document.querySelectorAll(".iti").forEach(element => {
+                element.style.display = "none";
+            });
+            
+        }
+    </script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-158624413-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-158624413-1');
+    </script>
+</body>
+
+</html>
