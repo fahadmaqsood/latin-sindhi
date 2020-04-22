@@ -18,4 +18,10 @@
         <changefreq>daily</changefreq>
         <lastmod>2020-02-24</lastmod>
     </url>
+    <url>
+        <loc>http://fahadmaqsood.github.io/latin-sindhi/promote/index.html</loc>
+        <priority>1.0</priority>
+        <changefreq>daily</changefreq>
+        <lastmod>2020-04-22</lastmod>
+    </url>
 </urlset>
