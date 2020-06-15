@@ -1,5 +1,5 @@
-const latin_alphabets = ["a", "á", "ǎ", "b", "b́", "ç", "d", "d̬", "ḍ", "e", "ë", "f", "g", "ǵ", "g̈", "h", "i", "j", "j́", "j̈", "k", "l", "m", "n", "ń", "o", "p", "r", "ŕ", "s", "ẗ", "t", "u", "w", "y", "z"]
-const perso_arabic_alphabets = ["اَ", "آ", "ع", "ب", "ٻ", "چ", "د", "ڏ", "ڊ", "اے", "ئي", "ف", "گ", "ڳ", "ڱ", "ھ/ح", "اِ", "ج", "ڄ", "ڃ", "ق/ڪ", "ل", "م", "ن", "ڻ", "او", "پ", "ر", "ڙ", "س/ص/ث", "ت/ط", "ٽ", "اُ", "و", "ي", "ز/ذ/ض/ظ"]
+const latin_alphabets = ["a", "ǎ", "b", "b́", "ç", "d", "d̬", "ḍ", "e", "ë", "f", "g", "ǵ", "g̈", "h", "i", "j", "j́", "j̈", "k", "l", "m", "n", "ń", "o", "p", "r", "ŕ", "s", "ẗ", "t", "u", "w", "y", "z"]
+const perso_arabic_alphabets = ["اَ", "ع", "ب", "ٻ", "چ", "د", "ڏ", "ڊ", "اے", "ئي", "ف", "گ", "ڳ", "ڱ", "ھ/ح", "اِ", "ج", "ڄ", "ڃ", "ق/ڪ", "ل", "م", "ن", "ڻ", "او", "پ", "ر", "ڙ", "س/ص/ث", "ت/ط", "ٽ", "اُ", "و", "ي", "ز/ذ/ض/ظ"]
 
 
 const latin_hard_alphabets = ["bh", "çh", "dh", "ḍh", "gh", "jh", "kh", "ph", "sh", "ẗh", "th"];
@@ -60,11 +60,9 @@ $(hard_table + ">tbody").html('');
 
 for (let row = 0; row <= hard_rows; row++) {
     $(hard_table + ">tbody").append('<tr></tr>');
-    
 
     for (let i = 0; i <= hard_cols - 1; i++) {
 
-        
         if (isEven(row)) {
             if(current_latin_hard_alphabet < latin_hard_alphabets.length){
                 $(hard_table+">tbody").find("tr:last-child").append('<th>'+latin_hard_alphabets[current_latin_hard_alphabet]+'</th>')
