@@ -23,7 +23,19 @@
                 font-size: 1.1rem;
             }
 
-            h1 {text-align: center;}
+            @media only screen and (max-width: 912px) {
+                body {
+                    padding: 1.5rem 3rem;
+                }
+            }
+
+            @media only screen and (max-width: 600px) {
+                body {
+                    padding: 1rem 0.8rem;
+                }
+            }
+
+            h1 {text-align: center; margin-top: 1em!important;}
 
             h1, h2 {
                 font-size: 1.5em;
