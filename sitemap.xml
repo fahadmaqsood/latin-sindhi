@@ -30,4 +30,10 @@
         <changefreq>daily</changefreq>
         <lastmod>2020-04-22</lastmod>
     </url>
+    <url>
+        <loc>http://fahadmaqsood.github.io/quotes.html</loc>
+        <priority>1.0</priority>
+        <changefreq>daily</changefreq>
+        <lastmod>2021-04-18</lastmod>
+    </url>
 </urlset>
